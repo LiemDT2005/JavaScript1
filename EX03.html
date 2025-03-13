@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vie">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bảng cửu chương</title>
+    <script language="Javascript">
+        function hienthi() {
+            a = document.f.a;
+            nd = document.noidung;
+
+            nd.document.body.innerHTML = "";
+            if(a.value == "" || isNaN(a.value)) 
+                nd.document.write("<font color='red'>a phải là một số</font>");
+            else {
+                nd.document.write("<b>Bảng cửu chương " + a.value + ":</b><br/>");
+                for (i = 1 ; i <= 10 ; i++)
+                    nd.document.write(a.value + " x " +  i + " = " + (i * a.value) + "<br/>");
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <form name="f">
+      <table border="0" align="center">
+        <tr>
+          <td colspan="2" align="center">
+            <h2>BẢNG CỬU CHƯƠNG</h2>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Bảng cửu chương cần tính</td>
+          <td><input name="a" size="5" onchange="hienthi()"></td>
+          <tr><td colspan="2" align="center">
+            <iframe name="noidung" width="230" height="250"></iframe>
+          </td></tr>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
